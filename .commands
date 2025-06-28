@@ -27,8 +27,55 @@ export const globalStyles = StyleSheet.create({
 
 
 
+import React from 'react';
+import { View, Text } from 'react-native';
+import { globalStyles } from '../theme/styles';
 
-import theme from '../theme/colors';
+export default function LoginScreen() {
+  return (
+    <View style={globalStyles.screen}>
+      <Text style={globalStyles.heading}>Login</Text>
+      <Text style={globalStyles.text}>Welcome back</Text>
+    </View>
+  );
+}
 
-<Text style={{ color: theme.colors.text }}>Hello</Text>
-<View style={{ backgroundColor: theme.colors.background }} />
+
+<Tab.Navigator
+  screenOptions={({ route }) => ({
+    headerShown: false,
+    tabBarStyle: { backgroundColor: theme.colors.background },
+    tabBarActiveTintColor: theme.colors.primary,
+    tabBarInactiveTintColor: theme.colors.secondaryText,
+    tabBarIcon: ({ color, size }) => {
+      let iconName = 'home-outline';
+      if (route.name === 'Upload') iconName = 'cloud-upload-outline';
+      else if (route.name === 'Profile') iconName = 'person-outline';
+
+      return <Ionicons name={iconName} size={size} color={color} />;
+    },
+  })}
+>
+  <Tab.Screen name="Home" component={FeedScreen} />
+  <Tab.Screen name="Upload" component={UploadScreen} />
+  <Tab.Screen name="Profile" component={ProfileScreen} />
+</Tab.Navigator>
+
+
+<TextInput
+  placeholder="Email"
+  placeholderTextColor={theme.colors.secondaryText}
+  style={{
+    backgroundColor: '#1a1a1a',
+    color: theme.colors.text,
+    padding: 12,
+    borderRadius: 6,
+    marginBottom: 12,
+  }}
+/>
+
+<TouchableOpacity
+  style={{ backgroundColor: theme.colors.primary, padding: 14, borderRadius: 6 }}
+>
+  <Text style={{ color: theme.colors.text, textAlign: 'center' }}>Log In</Text>
+</TouchableOpacity>
