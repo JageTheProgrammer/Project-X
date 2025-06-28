@@ -1,0 +1,19 @@
+import { StyleSheet } from 'react-native';
+import theme from './colors';
+
+export const globalStyles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: theme.colors.background,
+    paddingHorizontal: 16,
+    paddingTop: 40,
+  },
+  text: {
+    color: theme.colors.text,
+  },
+  heading: {
+    color: theme.colors.primary,
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+});
