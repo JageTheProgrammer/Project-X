@@ -2,3 +2,10 @@ npx expo install react-native-gesture-handler react-native-screens react-native-
 npx expo install expo-camera expo-media-library expo-notifications
 npm install
 npx expo start
+
+
+
+import theme from '../theme/colors';
+
+<Text style={{ color: theme.colors.text }}>Hello</Text>
+<View style={{ backgroundColor: theme.colors.background }} />
