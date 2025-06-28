@@ -1,5 +1,4 @@
-npm install expo react-native-web react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated react-native-vector-icons @react-native-community/masked-view
-
-npx expo install @react-native-async-storage/async-storage
-
+npx expo install react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-async-storage/async-storage
+npx expo install expo-camera expo-media-library expo-notifications
+npm install
 npx expo start
